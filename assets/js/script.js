@@ -38,15 +38,14 @@ function loadQuestion() {
 function checkAnswer() {
   const userAnswer = answerEl.value.trim().toLowerCase();
   const correctAnswer = questionsList[currentQuestionIndex].answer.toLowerCase();
-
   if (userAnswer === correctAnswer && userAnswer !== "") {
     launchConfetti(submitBtn);
     currentQuestionIndex++;
     loadQuestion();
   } else {
-    answerEl.classList.add("input-error");
+    answerEl.classList.add("input-erro");
     setTimeout(() => {
-      answerEl.classList.remove("input-error");
+      answerEl.classList.remove("input-erro");
     }, 300);
     answerEl.focus();
   }
